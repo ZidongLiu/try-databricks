@@ -11,4 +11,8 @@ test_rdd.map(get_sum_from_1_to_10000).first()
 
 # COMMAND ----------
 
+1 + 1 == 2
+
+# COMMAND ----------
+
 
