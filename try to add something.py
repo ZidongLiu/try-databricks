@@ -1,5 +1,13 @@
 # Databricks notebook source
-import numpy as np
+from src.helpers import get_sum_from_1_to_10000
+
+# COMMAND ----------
+
+test_rdd = sc.parallelize(range(10000))
+
+# COMMAND ----------
+
+test_rdd.map(get_sum_from_1_to_10000).first()
 
 # COMMAND ----------
 
