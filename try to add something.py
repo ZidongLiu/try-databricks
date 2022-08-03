@@ -1,21 +1,22 @@
 # Databricks notebook source
-from src.helpers import get_sum_from_1_to_10000
+info = dbutils.widgets.get("info")
 
 # COMMAND ----------
 
-test_rdd = sc.parallelize(range(10000))
+from pymongo import MongoClient
+connectionString= "mongodb+srv://scofield1210:0MlW0YYxMGZGDI0a@test-cluster.h0y0u.gcp.mongodb.net/?retryWrites=true&w=majority"
+client = MongoClient(connectionString)
+db = client['sample_airbnb']
 
 # COMMAND ----------
 
-test_rdd.map(get_sum_from_1_to_10000).first()
+from datetime import datetime
+
+db['test_insert'].insert_one({'info': info, 'time': datetime.now()})
 
 # COMMAND ----------
 
-1 + 1 == 3
 
-# COMMAND ----------
-
-1 + 2
 
 # COMMAND ----------
 
