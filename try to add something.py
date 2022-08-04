@@ -1,5 +1,6 @@
 # Databricks notebook source
 info = dbutils.widgets.get("info")
+# info = {"qwe": "ewq"}
 
 # COMMAND ----------
 
@@ -12,7 +13,7 @@ db = client['sample_airbnb']
 
 from datetime import datetime
 
-db['test_insert'].insert_one({'info': info, 'time': datetime.now()})
+db['test_insert'].insert_one({'info': info, 'time': datetime.now(), 'trial': True})
 
 # COMMAND ----------
 
